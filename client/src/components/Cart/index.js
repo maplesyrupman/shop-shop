@@ -5,8 +5,8 @@ import './styles.css'
 
 import {QUERY_CHECKOUT} from '../../utils/queries'
 import { loadStripe } from '@stripe/stripe-js'
-import { useStoreContext } from "../../utils/GlobalState"
-import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/actions"
+import { useDispatch, useSelector } from 'react-redux'
+import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../redux/actions'
 import { idbPromise } from "../../utils/helpers"
 import { useLazyQuery } from '@apollo/client'
 
@@ -15,7 +15,10 @@ const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx')
 
 
 export default function Cart() {
-    const [state, dispatch] = useStoreContext()
+    // const [state, dispatch] = useStoreContext()
+    const dispatch = useDispatch()
+    const state = useSelector(state => state)
+
     const [getCheckout, {data}] = useLazyQuery(QUERY_CHECKOUT)
 
     useEffect(() => {
