@@ -1,6 +1,10 @@
 # Shop Shop
 An e-commerce website with a persistant cart that uses Redux and IndexedDB, user sign in, and Swipe for payment processing. 
 
+Deployed [here](https://shop-shop-2000.herokuapp.com/)
+
+![shop shop homepage](/shop-shop.png)
+
 ## Description
 Upon opening the application for the first time, the user is met with all the products on a single page. They can filter the products by category with the list at the top of the screen. By clicking on an item, the user is brought to a product page which contains a description of the item along with a large image. The user can add items to their cart from either the single product page or the product list page, and are able to update quantities and remove items from their cart by accessing the cart component from any page. 
 
